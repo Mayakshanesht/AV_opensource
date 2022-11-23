@@ -1,0 +1,4 @@
+<launch>
+    <node name="camera_object_detector" pkg="camera_object_detector" type="main.py" output="screen">
+    </node>
+</launch>

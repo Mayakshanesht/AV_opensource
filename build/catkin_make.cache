@@ -1,0 +1,2 @@
+obstacle_detection
+-DCATKIN_DEVEL_PREFIX=/home/mayur/catkin_ws3/devel -DCMAKE_INSTALL_PREFIX=/home/mayur/catkin_ws3/install -G Unix Makefiles

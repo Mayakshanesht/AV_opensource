@@ -1,0 +1,8 @@
+prefix=/home/mayur/catkin_ws3/devel
+
+Name: obstacle_detection
+Description: Description of obstacle_detection
+Version: 0.0.0
+Cflags: -I/home/mayur/catkin_ws3/devel/include
+Libs: -L${prefix}/lib -lobstacle_detection
+Requires: geometry_msgs roscpp rospy sensor_msgs std_msgs message_runtime
