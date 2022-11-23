@@ -21,7 +21,7 @@ class Detector:
     def subscribeToTopics(self):
         rospy.loginfo("Subscribed to topics")
         rospy.Subscriber(self.image_topicname, Image,
-                         self.storeImage, queue_size=1)
+                         self.callback, queue_size=1)
 
     def loadParameters(self):
         '''
@@ -38,15 +38,15 @@ class Detector:
         self.DetectionsPublisher = rospy.Publisher(
             self.pub_topic_name, Image, queue_size=1)
 
-    def storeImage(self, img):
+    def callback(self, img):
         try:
             self.rgb_image = self.bridge.imgmsg_to_cv2(img.rgb_image, 'bgr8')
             self.depth_image = self.bridge.imgmsg_to_cv2(img.depth_image, "32FC1") ## Confirm these once
-            self.callYOLO()
+            self.Actionloop()
         except CvBridgeError as e:
             rospy.loginfo(str(e))
     
-    def callYOLO(self):
+    def Actionloop(self):
         '''
         Call yolo related functions here (Reuben, Mayur)
         and the final publish function (To be done by sahil)
